@@ -69,6 +69,18 @@ export const NavContainer = styled.nav`
     }
 `;
 
+export const FooterContainer = styled.footer`
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    /* background: #6600CC; */
+    height: 10vh;
+    color: #fafafa;
+    margin-top: auto;
+    @media ${device.laptopL} {
+    }
+    `;
+
 export const Section = styled.section`
     position: relative;
     padding: 2em 2em;

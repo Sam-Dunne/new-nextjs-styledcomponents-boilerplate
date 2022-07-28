@@ -1,6 +1,6 @@
 import React from 'react';
-import { FooterContainer, FooterCopy, FooterImagesContainer, FooterImageWrapper, FooterImage } from './Footer.elements';
-
+import { FooterCopy, FooterImagesContainer, FooterImageWrapper, FooterImage } from './Footer.elements';
+import { FooterContainer } from '../../globalstyle';
 const Footer = () => {
     return (
         <FooterContainer>

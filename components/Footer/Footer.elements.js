@@ -2,19 +2,6 @@ import styled from 'styled-components';
 import Image from 'next/image';
 import { device } from '../../device';
 
-
-export const FooterContainer = styled.footer`
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    /* background: #6600CC; */
-    height: 10vh;
-    color: #fafafa;
-    margin-top: auto;
-    @media ${device.laptopL} {
-    }
-    `;
-
 export const FooterImagesContainer = styled.div`
     position: relative;
     display: flex;
