@@ -1,17 +1,27 @@
 import React, { useState } from 'react';
 import { GiHamburger } from 'react-icons/gi';
 import { FaTimesCircle } from 'react-icons/fa';
-import { NavContainer, NavLink, NonHomeViewLinks, MobileBurger, StyledSvg, MobileMenuContainer, MobileNavBurgerWrapper, MobileNavLinkWrapper } from './Navbar.elements';
-import DownloadPDFLink from '../DownloadPDFLink/DownloadPDFLink';
+import {NavContainer} from "../../globalstyle"
+import { NavLink, NonHomeViewLinks, MobileBurger, StyledSvg, MobileMenuContainer, MobileNavBurgerWrapper, MobileNavLinkWrapper } from './Navbar.elements';
 import Link from 'next/link';
-import Image from 'next/image';
+import styled from 'styled-components'
 
+
+const NavMainWrapper = styled.div`
+     display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    margin: 0 auto;
+`
 
 const Navbar = ({ isOpen, mobile }) => {
     const [menuOpen, setMenuOpen] = useState(false);
 
-    const handleNavClick = (e) => setMenuOpen(!menuOpen);
-
+    const handleNavClick = (e) => {
+        e.preventDefault();
+        setMenuOpen(!menuOpen);
+    }
     return (
         <>
             {menuOpen ?
@@ -25,19 +35,18 @@ const Navbar = ({ isOpen, mobile }) => {
                         </MobileNavBurgerWrapper>
                         <MobileNavLinkWrapper>
 
-                            <Link href='/projects' passHref>
-                                <NavLink mobile onClick={handleNavClick}>Projects</NavLink>
-                            </Link>
-                            <Link href='/cv' passHref>
-                                <NavLink mobile onClick={handleNavClick}>CV</NavLink>
-                            </Link>
-                            <Link href='/contact' passHref>
-                                <NavLink mobile onClick={handleNavClick}>Contact</NavLink>
+                            <Link href='/' passHref>
+                                <NavLink mobile onClick={handleNavClick}>Link</NavLink>
                             </Link>
                             <Link href='/' passHref>
-                                <NavLink mobile onClick={handleNavClick}>Home</NavLink>
+                                <NavLink mobile onClick={handleNavClick}>Link</NavLink>
                             </Link>
-                            <DownloadPDFLink textWhite></DownloadPDFLink>
+                            <Link href='/' passHref>
+                                <NavLink mobile onClick={handleNavClick}>Link</NavLink>
+                            </Link>
+                            <Link href='/' passHref>
+                                <NavLink mobile onClick={handleNavClick}>Link</NavLink>
+                            </Link>
                         </MobileNavLinkWrapper>
                     </MobileMenuContainer>
                     <NavContainer>
@@ -48,36 +57,34 @@ const Navbar = ({ isOpen, mobile }) => {
                         <NonHomeViewLinks>
                         </NonHomeViewLinks>
                     </NavContainer>
-                    <StyledSvg>
-                        <ellipse cx="50%" cy="-5" rx="52%" ry="40" fill="#6600CC"></ellipse>
-                    </StyledSvg>
+                
                 </>
                 :
                 // Mobile menu is closed
                 <>
                     <MobileMenuContainer href='' onClick={handleNavClick}><FaTimesCircle /></MobileMenuContainer>
                     <NavContainer>
-                        <Link href='/' passHref>
-                            <NavLink>Sam Dunne</NavLink>
-                        </Link>
-                        {/* Hamburger Icon */}
-                        <MobileBurger href='' onClick={handleNavClick} ><GiHamburger ></GiHamburger></MobileBurger>
-                        <NonHomeViewLinks>
+                        <NavMainWrapper>
+                            <Link href='/' passHref>
+                                <NavLink>Sam Dunne</NavLink>
+                            </Link>
+                            {/* Hamburger Icon */}
+                            <MobileBurger href='' onClick={handleNavClick} ><GiHamburger ></GiHamburger></MobileBurger>
+                            <NonHomeViewLinks>
 
-                            <Link href='/projects' passHref>
-                                <NavLink>Projects</NavLink>
-                            </Link>
-                            <Link href='/cv' passHref>
-                                <NavLink>CV</NavLink>
-                            </Link>
-                            <Link href='/contact' passHref>
-                                <NavLink>Contact</NavLink>
-                            </Link>
-                        </NonHomeViewLinks>
+                                <Link href='/' passHref>
+                                    <NavLink>Link</NavLink>
+                                </Link>
+                                <Link href='/' passHref>
+                                    <NavLink>Link</NavLink>
+                                </Link>
+                                <Link href='/' passHref>
+                                    <NavLink>Link</NavLink>
+                                </Link>
+                            </NonHomeViewLinks>
+                        </NavMainWrapper>
+                        
                     </NavContainer>
-                    <StyledSvg>
-                        <ellipse cx="50%" cy="-5" rx="52%" ry="40" fill="#6600CC"></ellipse>
-                    </StyledSvg>
                 </>
             }
         </>

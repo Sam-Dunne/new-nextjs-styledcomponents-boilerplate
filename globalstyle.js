@@ -1,5 +1,6 @@
 import styled, { createGlobalStyle } from "styled-components";
 import { device } from './device';
+import { theme } from './pallette'
 import { layout } from './layoutSize';
 import Image from 'next/image'
 
@@ -20,30 +21,52 @@ export const GlobalStyle = createGlobalStyle`
     a, h3, h5, p {
         font-family: 'Nunito','Source Sans Pro', sans-serif;
     }
+
+    nav, footer {
+    background-color: ${theme.mediumDark};
+
+    }
 `;
 
 
-export const Container = styled.main`
+export const CONTAINER = styled.main`
     z-index: 1;
     width: 100%;
     padding: 10px 20px;
-    min-height: 75vh;
+    min-height: 80vh;
     position: relative;
+    background-color: ${theme.light};
 
     @media ${device.tablet} {
         padding: 1em 3em;
-        min-height: 60vh;
+        /* min-height: 60vh; */
     }
     @media ${device.ipadAir} {
         padding: 1em 3em;
-        min-height: 77vh;
+        /* min-height: 77vh; */
     }
 
     @media ${device.laptopL} {
-        min-height: 76vh;
+        /* min-height: 76vh; */
     
     }
     
+`;
+
+export const NavContainer = styled.nav`
+    height: 10vh;
+    /* padding: 20px 30px 0 30px; */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* background: blue; */
+    /* margin-bottom: -4px; */
+
+    @media ${device.mobileL} {
+    }
+
+    @media ${device.laptopL} {
+    }
 `;
 
 export const Section = styled.section`

@@ -1,28 +1,15 @@
 import Image from 'next/image';
 import { device } from '../../device';
+import { theme } from '../../pallette'
 import styled from 'styled-components';
 
-export const NavContainer = styled.nav`
-    min-height: 10vh;
-    padding: 20px 30px 0 30px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background: #6600CC;
-    margin-bottom: -4px;
 
-    @media ${device.mobileL} {
-    }
-
-    @media ${device.laptopL} {
-    }
-`;
 
 export const NavLink = styled.a`
     text-decoration: none;
     padding: 0 0;
     margin: ${props => props.mobile ? '0 0 50px 0' : '0'};
-    color: #fafafa;
+    color: ${theme.white};
     font-size: 1.5rem;
     font-weight: 500;
 
@@ -66,15 +53,16 @@ export const MobileBurger = styled.a`
 `;
 
 export const StyledSvg = styled.svg`
+    /* display: block; */
     width: 100%;
-    height: 40px; 
+    height: fit-content; 
 `;
 
 //mobile nav elements
 export const MobileMenuContainer = styled.div`
     height: 100vh;
     width: 100vw;
-    background: #934cdb;
+    background: ${theme.mediumDark};
     position: fixed;
     padding: 3rem;
     top: ${props => props.isOpen ? '0' : '-200vh'};
