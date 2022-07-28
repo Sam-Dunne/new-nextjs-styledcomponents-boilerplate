@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+// import { useEffect } from "react";
 import Head from "next/head";
 import styled from 'styled-components';
 import { CONTAINER,  HeroH1, LinkGrid, H2 } from "../globalstyle";
@@ -27,11 +27,11 @@ const Headshot = styled.img`
 
 export default function Home() {
 
-  useEffect(() => {
-    fetch('https://recipe-registry.herokuapp.com', { mode: 'no-cors' })
-    fetch('https://blooming-wave-03926.herokuapp.com/', { mode: 'no-cors' })
-    fetch('https://learning-redux.herokuapp.com/', { mode: 'no-cors' })
-  }, [])
+  // useEffect(() => {
+  //   fetch('https://recipe-registry.herokuapp.com', { mode: 'no-cors' })
+  //   fetch('https://blooming-wave-03926.herokuapp.com/', { mode: 'no-cors' })
+  //   fetch('https://learning-redux.herokuapp.com/', { mode: 'no-cors' })
+  // }, [])
 
   return (
     <>
@@ -44,7 +44,7 @@ export default function Home() {
       </Head>
       <CONTAINER>
       
-      
+      <h1>home</h1>
         
       
       </ CONTAINER>
