@@ -94,6 +94,21 @@ export const Section = styled.section`
     }
     `;
 
+export const ProjectsCardWrapper = styled.div`
+    position: relative;
+    width: 70%;
+    margin: 10px auto 30px auto;
+   
+    @media ${device.tablet} {        
+        width: 35%;
+        margin: 2vw 2vw;
+    }
+
+    @media ${device.laptopL} {
+        width: 20%;
+    }
+`;
+
 export const ImageWrapper = styled.div`
     margin: 0 0;
     @media ${device.tablet} {
